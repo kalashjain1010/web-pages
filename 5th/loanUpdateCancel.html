@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update/Cancel Loan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="loanInitiation.html">Initiate Loan</a>
+            <a href="loanUpdateCancel.html" class="active">Update/Cancel Loan</a>
+        </nav>
+        <h2>Update or Cancel Loan Request</h2>
+        <form id="loanUpdateForm">
+            <div class="form-group">
+                <label for="viewSSN">Enter Customer SSN ID to view details:</label>
+                <input type="text" id="viewSSN" name="viewSSN" placeholder="Enter SSN" required>
+            </div>
+            <button type="button" onclick="viewLoanDetails()">View Loan Details</button>
+
+            <div id="loanDetails" class="hidden">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="customerNameUpdate">Customer Name:</label>
+                        <input type="text" id="customerNameUpdate" name="customerNameUpdate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loanAmountUpdate">Loan Amount:</label>
+                        <input type="number" id="loanAmountUpdate" name="loanAmountUpdate" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="loanDurationUpdate">Loan Duration (Months):</label>
+                        <input type="number" id="loanDurationUpdate" name="loanDurationUpdate" required>
+                    </div>
+                </div>
+                <button type="button" onclick="updateLoan()">Update Loan</button>
+                <button type="button" onclick="cancelLoan()">Cancel Loan</button>
+            </div>
+
+            <div id="updateMessageBox" class="hidden">Loan Request Updated Successfully!</div>
+            <div id="cancelMessageBox" class="hidden">Loan Request Cancelled!</div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
