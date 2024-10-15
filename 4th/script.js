@@ -21,8 +21,19 @@ document.getElementById("transactionForm").addEventListener("submit", function(e
     messageBox.classList.remove("hidden");
     messageBox.textContent = "Transaction submitted successfully!";
 
-    // Simulate storing data (could be sent to a server here)
-    console.log("Transaction Data: ", transactionData);
+    // Display all details in an alert
+    alert(`Transaction Details:\n\n
+    Transaction ID: ${transactionData.transactionId}\n
+    Customer SSN ID: ${transactionData.ssnId}\n
+    Customer Name: ${transactionData.customerName}\n
+    Account ID: ${transactionData.accountId}\n
+    Adhaar Card No.: ${transactionData.adhaarCard}\n
+    Pan Card No.: ${transactionData.panCard}\n
+    Address: ${transactionData.address}\n
+    Date: ${transactionData.date}\n
+    Contact Number: ${transactionData.contactNumber}\n
+    Mode of Transaction: ${transactionData.transactionMode}\n
+    Amount: ${transactionData.amount}`);
 
     // Clear the form after submission
     document.getElementById("transactionForm").reset();
